@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socca Guatemala</title>
+    <link rel="stylesheet" href="style.css">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+	 <link rel="icon" href="logos/icono-soccagt.png" type="icono">
+    <link rel="shortcut icon" href="logos/icono-soccagt.png" type="icono">
+</head>
+<body>
+
+    <header>
+        <header>
+    <a href="index.html">
+        <img src="logos/logo-socca-guate-blanco.horizontal.png" alt="Logo de Tu Sitio Web">
+    </a>
+</header>
+    </header>
+ <nav>
+    <div class="menu-icon">&#9776;</div>
+    <ul>
+        <li>
+            <a>Fútbol Soccca</a>
+            <ul class="submenu">
+                <li><a href="que es socca.html">¿Qué es Socca?</a></li>
+                <li><a href="reglas regulaciones.html">Reglas y Regulaciones</a></li>
+                <li><a href="federacion internacional socca.html">Federación Internacional de Socca</a></li>
+                <li><a href="gobernanza internacional.html">Gobernanza Internacional</a></li>
+                <li><a href="gobernanza nacional.html">Gobernanza Nacional</a></li>
+            </ul>
+        </li>
+        <li>
+            <a>Torneos Internacionales</a>
+            <ul class="submenu">
+                <li><a href="#socca">Torneo 1</a></li>
+                <li><a href="#socca">Torneo 2</a></li>
+                <li><a href="#socca">Torneo 3</a></li>
+                <li><a href="#socca">Torneo 4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#contacto">Leisure Leagues</a>
+        </li>
+		 <li>
+            <a href="#contacto">Contacto</a>
+        </li>
+    </ul>
+</nav>
+	<div><img style="width: 100%;" src="logos/portada-facebook-socca.png" alt="bannerweb"></div>
+	
+    <section id="contenido" class="contenido">
+        
+        <div class="columna" >
+            <section class="acerca">
+                <h2>¿Quienes Somos?</h2>
+              <p>Somos la Federación Guatemalteca de SOCCA y pertenecemos a la Confederación Americana de SOCCA, quien regula la práctica de fútbol amateur en el continente americano y en el caribe. Siendo parte de la Confederación Internacional de SOCCA, con sede en el Reino Unido desde hace 6 años y con +80 países afiliados.&nbsp;</p>
+                <p>Nuestro proveedor oficial para administrar las ligas de SOCCA es Leisure League, respaldada por más de 40 años de experiencia y lo posiciona como la primera, más grande y mejor establecida organización proveedora de plataformas y servicios para administrar ligas de fútbol reducido (6 a 9 jugadores).</p>
+            </section>
+			<section class="imagen">
+                <img src="logos/nosotros.png" alt="Acerca de" style="width: 100%; border-radius: 20px">
+            </section>
+        </div>
+
+        <div class="columna">
+			<section class="imagen">
+                <img src="logos/personalidades.png" alt="Acerca de" style="width: 100%; border-radius: 20px">
+            </section>
+           <section class="acerca">
+                <h2>Grandes Personalidades</h2>
+			   <h3>Que se han sumado al proyecto</h3>
+              <p>Ilustres personalidades nacionales e internacionales han unido fuerzas con el proyecto Socca Guatemala. Entre ellas se encuentran destacadas figuras como Marco Pablo Pappa, Jean Jonathan Marques (Director Técnico), Cristian Noriega y Hamilton Lópe . Todos estamos comprometidos y preparados para liderar a la selección nacional de fútbol socca hacia la Copa América Cancún 2024.</p>
+            </section>
+        </div>
+    </section>
+
+	
+	<iframe width="100%" height="600" src="https://www.youtube.com/embed/KuDncVbaIvE" title="Welcome Guatemala! 🇬🇹 Welcome to the 𝐂𝐨𝐩𝐚 𝐒𝐨𝐜𝐜𝐚 𝐀𝐦𝐞𝐫𝐢𝐜𝐚 𝐂𝐚𝐧𝐜𝐮𝐧 𝟐𝟎𝟐𝟒 🏆" frameborder="0" allow="accelerometer; autoplay;" allowfullscreen></iframe>
+	
+	
+	<div>
+		<h1 style="text-align: center; color: #2CC000">Nuestros Patrocinadores Oficiales</h1>
+    <section id="patrocinadores">
+<a href="https://www.facebook.com/Multimateriales.gt"><img src="logos/multimateriales.png" alt="patrocinador"></a>
+		</section>
+</div>
+	<div>
+		<h1 style="text-align: center; color: #2CC000">Marcas Aliadas al Proyecto&nbsp;</h1>
+    <section id="patrocinadores2">
+        <a href="https://www.facebook.com/profile.php?id=100083351030506"><img src="logos/atletic gt.png" alt="patrocinador"></a>
+        <a href="https://www.facebook.com/JEANMARQUEZSTORE"><img src="logos/jm12 logo.png" alt="patrocinador"></a>
+        <a href="https://www.facebook.com/moidesigner22"><img src="logos/moidg logo.png" alt="patrocinador"></a>
+        <a href="https://www.facebook.com/SemiBoldstudio"><img src="logos/semibold-logo.png" alt="patrocinador"></a>
+        <a href="https://www.facebook.com/dondeelrambo"><img src="logos/donde-el-rambo.png" alt="patrocinador"></a>
+        <a href="https://www.instagram.com/postresmelty"><img src="logos/melty.png" alt="patrocinador"></a>
+    </section>
+</div>
+	
+    <footer>
+        <p2>&copy; 2024 Socca Guatemala / MOi Diseño Gráfico</p2>
+    </footer>
+	
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navList = document.querySelector('nav ul');
+
+    menuIcon.addEventListener('click', function () {
+        navList.classList.toggle('show');
+    });
+});
+	</script>
+	
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v19.0" nonce="3GXjNV8A"></script>
+	
+</body>
+</html>
