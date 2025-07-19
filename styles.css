@@ -1,0 +1,309 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0; padding: 0; min-height: 200vh; /* para scroll */
+  font-family: Arial, sans-serif;
+	background-color: #000423;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 58px;
+  background: #000423;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: top 0.3s ease, transform 0.15s ease;
+  z-index: 1000;
+  user-select: none;
+}
+
+/* Logo lado izquierdo */
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Contenedor del menú + búsqueda */
+.menu-search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Menu wrap (menú a la izquierda del icono búsqueda) */
+nav.menu-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav.menu-wrap > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav.menu-wrap ul li {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Submenú */
+nav.menu-wrap ul li > ul.submenu {
+  display: none;
+  position: absolute;
+  top: 58px;
+  left: 0;
+  background: #333;
+  min-width: 180px;
+  border-radius: 4px;
+  padding: 8px 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  z-index: 1100;
+}
+
+nav.menu-wrap ul li:hover > ul.submenu,
+nav.menu-wrap ul li:focus-within > ul.submenu {
+  display: block;
+}
+
+nav.menu-wrap ul li > ul.submenu li {
+  padding: 8px 20px;
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+nav.menu-wrap ul li > ul.submenu li:hover {
+  background-color: #555;
+}
+
+nav.menu-wrap ul li > ul.submenu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+nav.menu-wrap ul li > ul.submenu li a:hover {
+  text-decoration: underline;
+}
+
+/* Icono de búsqueda */
+.icon-search {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  fill: white;
+  transition: fill 0.3s ease;
+}
+.icon-search:hover {
+  fill: #1e90ff;
+}
+
+.moi2 {
+    width: 80%; 
+    margin: 0 auto; /* Centrar horizontalmente */
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-gap: 10px; 
+    justify-items: center; /* Centra las columnas horizontalmente */
+  }
+
+  .contenedoress-imagenesmoi {
+    position: relative;
+    width: 100%; /* Ancho del contenedor al 100% */
+    border-radius: 11px;
+  }
+
+  .contenedoress-imagenesmoi img {
+    width: 100%; /* Imágenes al 100% del ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+        border-radius: 15px; /* Bordes redondeados */
+
+  }
+
+  .imagenesmoi-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: #0e1235;
+  }
+
+  .contenedoress-imagenesmoi:hover .imagenesmoi-hover {
+    opacity: 1;
+  }
+
+  .animacion-carga {
+    animation: aparecer 1s ease forwards;
+  }
+
+  @keyframes aparecer {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Media queries para ajustar el diseño en diferentes tamaños de pantalla */
+  @media (max-width: 768px) {
+    .moi2 {
+      width: 98%;
+grid-template-columns: 100%;
+    }
+  }
+  
+  .post-body a {    color: #000423;
+  }
+  
+  
+  .boton-contrata {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffbf31; /* Color de fondo del botón */
+    color: #0e1235; /* Color del texto */
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0px;
+    width: 100%;
+  }
+
+  .boton-contrata:hover {
+    background-color: #fff; /* Color de fondo del botón al pasar el ratón */
+        color: #000423; /* Color del texto */
+
+  }
+
+  /* Centrar texto verticalmente */
+  .boton-contrata span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+.btn-wsp {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        line-height: 74px;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 45px;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        transition: all 300ms ease;
+    }
+    .btn-wsp:hover {
+        background: #20ba5a;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        .btn-wsp {
+            width: 63px;
+            height: 63px;
+            line-height: 71px;
+        }
+    }
+
+.galeria {
+  display: flex; /* Utilizar flexbox para diseño flexible */
+  flex-wrap: wrap; /* Permitir que las imágenes se envuelvan cuando no quepan en una línea */
+  justify-content: center; /* Centrar las imágenes horizontalmente */
+}
+
+.imagen {
+  flex: 1 1 calc(25% ); /* Establecer el tamaño base de las imágenes y permitir crecimiento flexible */
+  max-width: calc(25% ); /* Ancho máximo de las imágenes */
+  overflow: hidden; /* Ocultar el desbordamiento para animación de desplazamiento */
+  position: relative; /* Establecer posición relativa para hijos absolutos */
+}
+
+.imagen img {
+  width: 100%; /* Asegurar que las imágenes ocupen todo el espacio disponible */
+  height: auto; /* Mantener la proporción de la imagen */
+  transition: transform 0.3s ease; /* Agregar una transición suave al desplazamiento */
+}
+
+.imagen img:hover {
+  opacity: 0.7; /* Opacidad al 50% al pasar el mouse */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .imagen {
+    flex: 1 1 calc(33.33% ); /* Ajustar el tamaño de las imágenes para pantallas más pequeñas */
+    max-width: calc(33.33% ); /* Ancho máximo de las imágenes en pantallas más pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .imagen {
+    flex: 1 1 calc(50% ); /* Ajustar el tamaño de las imágenes para pantallas muy pequeñas */
+    max-width: calc(50% ); /* Ancho máximo de las imágenes en pantallas muy pequeñas */
+  }
+}
+
+h2.hero-title {
+	display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 33px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.3em;
+  margin: 0;
+  font-size: 55px;
+  font-weight: 800;	
+	text-align: center;
+}
+
+@media (max-width: 480px) {
+  h2.hero-title {
+  font-size: 35px;
+	}
+}
+
+@media (max-width: 380px) {
+  h2.hero-title {
+    font-size: 27px;
+  }
+}
+
+.hero-description {
+	display: block;
+  font-size: 14px;
+  color: #fff;
+  margin: 20px 25% 0;
+	text-align: center
+}
+
+.hero {
+  padding: 50px 0;
+  margin: 0;
+}
