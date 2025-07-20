@@ -1,4 +1,4 @@
-  fetch('../includes/header.html')  
+  fetch('../includes/header.html')  // usa '../' si estás dentro de una carpeta
     .then(res => res.text())
     .then(data => {
       document.getElementById('header-container').innerHTML = data;

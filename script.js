@@ -1,3 +1,14 @@
+fetch('includes/header.html')
+      .then(response => {
+        if (!response.ok) throw new Error("Archivo no encontrado");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error cargando el header:', err));
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('menu');
