@@ -1,14 +1,14 @@
-  const menuToggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("menu");
-  const submenuToggles = document.querySelectorAll(".submenu-toggle");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-  menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-  });
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
 
-  submenuToggles.forEach((toggle) => {
-    toggle.addEventListener("click", (e) => {
-      const parent = toggle.closest(".has-submenu");
-      parent.classList.toggle("open");
-    });
-  });
+document.querySelectorAll(".nav-link").forEach(link =>
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  })
+);
