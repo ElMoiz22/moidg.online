@@ -1,8 +1,12 @@
-  fetch('../includes/header.html')  
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('header-container').innerHTML = data;
-    });
+fetch('../includes/header.html')
+      .then(response => {
+        if (!response.ok) throw new Error("Archivo no encontrado");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error cargando el header:', err));
 
 
 document.addEventListener('DOMContentLoaded', () => {

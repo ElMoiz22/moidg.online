@@ -1,4 +1,15 @@
- // Lista de productos con categoría moidg
+fetch('../includes/header.html')
+      .then(response => {
+        if (!response.ok) throw new Error("Archivo no encontrado");
+        return response.text();
+      })
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      })
+      .catch(err => console.error('Error cargando el header:', err));
+
+
+// Lista de productos con categoría moidg
 const products = [
     {
         id: 1,  name: 'Playera MOI Azul', price: 120,
