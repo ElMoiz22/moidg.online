@@ -1,4 +1,4 @@
-fetch('../includes/header.html')
+fetch('../includes/index.html')
       .then(response => {
         if (!response.ok) throw new Error("Archivo no encontrado");
         return response.text();

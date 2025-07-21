@@ -1,29 +1,14 @@
-  fetch('../includes/header.html')  // usa '../' si estás dentro de una carpeta
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('header-container').innerHTML = data;
-    });
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+  const submenuToggles = document.querySelectorAll(".submenu-toggle");
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menu = document.getElementById('menu');
-  const submenuToggles = document.querySelectorAll('.submenu-toggle');
-  const searchIcon = document.querySelector('.icon-search');
-  const searchBar = document.getElementById('search-bar');
-
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
   });
 
-  submenuToggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const submenu = btn.nextElementSibling;
-      submenu.classList.toggle('active');
+  submenuToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+      const parent = toggle.closest(".has-submenu");
+      parent.classList.toggle("open");
     });
   });
-
-  searchIcon.addEventListener('click', () => {
-    searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
-  });
-});
