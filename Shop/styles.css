@@ -8,6 +8,7 @@ body {
 background-color: #ffffff0a;
   padding: 15px;
   border-radius: 224px;
+	padding-top: 80px;
 }
 
 /* Barra de navegación */
@@ -137,7 +138,7 @@ background-color: #ffffff0a;
 
 .caja-invisible {
     position: fixed;
-    top: 0;
+    top: -100%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1162,3 +1163,39 @@ margin: 5px 0;
         opacity: 1;
       }
     }
+
+
+ .swiper {
+        width: 100%;
+        height: 100%;
+padding: 30px 0px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #ffffff00;
+
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+

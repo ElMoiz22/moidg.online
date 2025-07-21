@@ -323,9 +323,8 @@ function selectProduct(productName, productPrice, quantityId, sizeId = null) {
 
   const quantity = parseInt(quantityInput.value);
   const size = sizeId ? (document.getElementById(sizeId)?.value.trim() || 'N/A') : 'N/A';
-  const productKey = `${productName}-${size}`;  // Usamos un identificador único basado en el nombre y la talla
+  const productKey = `${productName}-${size}`; 
 
-  // Si ya existe el producto con esa talla, actualizamos su cantidad
   if (selectedProducts[productKey]) {
     selectedProducts[productKey].quantity += quantity; // Añadir cantidad al producto existente
   } else {
@@ -755,3 +754,5 @@ menuIcon.addEventListener("click", () => {
         document.documentElement.style.overflow = 'auto';
       }, 2000); // Ajusta el tiempo de carga (en milisegundos) si es necesario
     });
+
+  
