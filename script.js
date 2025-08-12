@@ -1,33 +1,21 @@
-fetch('includes/index.html')
-      .then(response => {
-        if (!response.ok) throw new Error("Archivo no encontrado");
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-      })
-      .catch(err => console.error('Error cargando el header:', err));
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const menu = document.getElementById('menu');
-  const submenuToggles = document.querySelectorAll('.submenu-toggle');
-  const searchIcon = document.querySelector('.icon-search');
-  const searchBar = document.getElementById('search-bar');
-
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
 
-  submenuToggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const submenu = btn.nextElementSibling;
-      submenu.classList.toggle('active');
+  // Submenús en móviles
+  document.querySelectorAll(".has-submenu > .nav-link").forEach(link => {
+    link.addEventListener("click", e => {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        link.nextElementSibling.classList.toggle("open");
+      }
     });
   });
-
-  searchIcon.addEventListener('click', () => {
-    searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
-  });
 });
+</script>

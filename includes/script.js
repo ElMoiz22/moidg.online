@@ -1,14 +1,22 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  const submenuToggles = document.querySelectorAll('.submenu-toggle');
+  const searchIcon = document.querySelector('.icon-search');
+  const searchBar = document.getElementById('search-bar');
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  submenuToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const submenu = btn.nextElementSibling;
+      submenu.classList.toggle('active');
+    });
+  });
+
+  searchIcon.addEventListener('click', () => {
+    searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
+  });
 });
-
-document.querySelectorAll(".nav-link").forEach(link =>
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-  })
-);
