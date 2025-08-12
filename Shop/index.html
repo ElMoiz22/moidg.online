@@ -4,26 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Moi Agency</title>
-  <link rel="stylesheet" href="styles.css" />
-	<link rel="stylesheet" href="../includes/styles.css">
-	      <link href='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css' rel='stylesheet'/>
-<script src="../includes/script.js" defer></script>
+  <link rel="stylesheet" href="styles.css" />	
+  <link rel="stylesheet" href="../includes/styles.css" />	
+  <script src="../includes/script.js"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
+  <link href='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css' rel='stylesheet'/>
 </head>
 <body>
+	
+<div id="header"></div>
 
-	<div id="header-container"></div>
-
-<header class="mi-header">
-    <nav class="mi-navbar">
-        <div class="mi-logo">
-            <a href="https://www.moidg.online/2024/06/tienda.html"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisUMf5GF45NTfJr5UoZAMO8Am3yfMyyWWAILnz6I7JG-CHW_EhFRSNOhPDkyKr4MQndkiT1oM7Gq38ctBKZ8NB4QcNECvtcufz9uT2E1u4khqg88RfdKFMgr3LwzNkqy4D1JJOTo-8wxureEXZhNG1ELbNtqHF39SIEpOQiCI5uUdPpNVqqTHipui6ym1N/s1600/moistore2.png" alt="Mi Logo"></a>
-        </div>
-      <a href="javascript:void(0);" class="btn-cart" id="openCartModal">
-  <i class="fa fa-shopping-cart icono"></i> <!-- Icono de carrito -->
-  <span id="cart-count" class="cart-count" style="display: none;">0</span>
-</a>
-    </nav>
-</header>
+<script>
+  fetch("../includes/index.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
 	
 	 <div class="caja-invisible" id="ventanaLegal">
         <div class="contenedor-popup">
