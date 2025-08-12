@@ -68,6 +68,18 @@
 		
 <script src="script.js"></script>
 <script src="headerscript.js"></script>
+<script src="footer.js"></script>
+
+<div id="footer"></div>
+
+<script>
+  fetch("includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
 
 	</body>
 </html>
