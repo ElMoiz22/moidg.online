@@ -1,21 +1,31 @@
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
+  const subMenuParents = document.querySelectorAll(".has-submenu");
 
-  hamburger.addEventListener("click", () => {
+  // Toggle menú principal
+  hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
   });
 
-  // Submenús en móviles
-  document.querySelectorAll(".has-submenu > .nav-link").forEach(link => {
-    link.addEventListener("click", e => {
-      if (window.innerWidth < 768) {
+  // En móviles, abrir/cerrar submenús con clic
+  subMenuParents.forEach(item => {
+    item.addEventListener("click", function (e) {
+      if (window.innerWidth <= 900) {
         e.preventDefault();
-        link.nextElementSibling.classList.toggle("open");
+        this.classList.toggle("open");
+      }
+    });
+  });
+
+  // Cerrar menú cuando se hace clic en un enlace
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", function () {
+      if (window.innerWidth <= 900) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
       }
     });
   });
 });
-</script>
