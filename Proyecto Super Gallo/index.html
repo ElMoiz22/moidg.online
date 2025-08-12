@@ -4,17 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Moi Agency</title>
-  <link rel="stylesheet" href="styles.css" />
-	<link rel="stylesheet" href="../includes/styles.css">
-<script src="../includes/script.js" defer></script>
-	
+  <link rel="stylesheet" href="styles.css" />	
+  <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 </head>
 <body>
 	
+<div id="header"></div>
+
+<script>
+  fetch("../includes/index.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+
 	<div id="header-container"></div>
 	
 	<div class="bannerpost">
-    <img alt="imgpost" class="imgpost" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5sQicjlOzcsncRJbYOJzmUr6AAMrzJwgnJVnH6FVL7JnY7su5xsgYN0_cJOwNAd7cJDf5DGBiTesdA5GXwiuBefupy4Yx9piZInFjMeLZZgw82PPzza3aV-1adkW34Nnw9ASXXnWQHQhZ_IwhPiiK4XQfFvBuUvHng65uMNR9gVvo_M66HNwEFCDF4Bip/s1600/imagen_2024-03-31_145813441.png" />
+    <img alt="imgpost" class="imgpost" src="../images/fondoweb.png" />
     <div class="txttitulopost">Proyecto Super Gallo</div>
   </div>
 
