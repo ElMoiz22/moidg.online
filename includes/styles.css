@@ -253,8 +253,8 @@ background-image:url(images/fondoweb.png)
 
 /* Footer general */
 .footer {
-  background: #111;
-  color: #fff;
+  background: #00526f;
+  color: #fcf6ef;
   padding-top: 40px;
   font-family: Arial, sans-serif;
 }
@@ -285,6 +285,7 @@ background-image:url(images/fondoweb.png)
 .footer-section li {
   font-size: 14px;
   line-height: 1.6;
+  margin-right: 50px;
 }
 
 .footer-section ul {
@@ -294,22 +295,22 @@ background-image:url(images/fondoweb.png)
 
 .footer-section ul li a {
   text-decoration: none;
-  color: #ccc;
+  color: #fcf6ef;
   transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-  color: #fff;
+  color: #fcf6ef;
 }
 
 /* Derechos reservados */
 .footer-bottom {
-  background: #000;
+  background: #004057;
   text-align: center;
   padding: 10px;
   font-size: 13px;
   margin-top: 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #fcf6ef;
 }
 
 /* Móviles */
@@ -318,4 +319,12 @@ background-image:url(images/fondoweb.png)
     flex-direction: column;
     text-align: center;
   }
+  
+.footer-section p, 
+.footer-section li {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-right: 5px;
+}
+
 }
