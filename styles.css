@@ -56,6 +56,7 @@ body {
   text-decoration: none;
   padding: 15px 20px;
   display: block;
+  border-radius: 25px;
 }
 
 .nav-link:hover {
@@ -102,13 +103,18 @@ body {
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
+  .nav-link {
+  border-radius: 0px;
+}
+
   .nav-menu {
     flex-direction: column;
     position: absolute;
     top: 70px;
     left: -100%;
-    background-color: #fcf6ef;
+    background-color: #00526f;
     width: 100%;
     transition: left 0.3s ease;
   }
@@ -136,23 +142,23 @@ body {
 .hamburger .bar { width: 25px; height: 3px; background: white; margin: 4px 0; transition: all .25s; }
 
 /* comportamiento escritorio */
-@media (min-width: 769px) {
+@media (min-width: 900px) {
   .nav-menu { display:flex !important; position: static; }
   .hamburger { display: none; }
 }
 
 /* comportamiento móvil */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hamburger { display: flex; align-items:center; justify-content:center; width:44px; height:44px; }
 
   /* menú deslizado fuera de pantalla */
   .nav-menu {
     position: fixed;
-    top: 64px;            /* ajustar según altura header */
+    top: 80px;            /* ajustar según altura header */
     left: -100%;
     width: 100%;
     height: calc(100% - 64px);
-    background: #000423;
+    background: #00526f;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -240,8 +246,8 @@ grid-template-columns: 100%;
   .boton-contrata {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ffbf31; /* Color de fondo del botón */
-    color: #0e1235; /* Color del texto */
+    background-color: #00526f; /* Color de fondo del botón */
+    color: #fcf6ef; /* Color del texto */
     border: none;
     border-radius: 10px; /* Bordes redondeados */
     font-size: 16px;
@@ -359,7 +365,7 @@ background-image:url(images/fondoweb.png)
 
 @media (max-width: 780px) {
   h2.hero-title {
-  font-size: 55px;
+  font-size: 40px;
 	}
 
   .hero-description {

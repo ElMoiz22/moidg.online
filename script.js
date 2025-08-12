@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // En móviles, abrir/cerrar submenús con clic
   subMenuParents.forEach(item => {
     item.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 900) {
         e.preventDefault();
         this.classList.toggle("open");
       }
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cerrar menú cuando se hace clic en un enlace
   document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", function () {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 900) {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
