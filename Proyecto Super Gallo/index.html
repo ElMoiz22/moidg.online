@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Moi Shop</title>
+<title>Proyecto Super Gallo</title>
 <link rel="stylesheet" href="styles.css" />	
-<link rel="stylesheet" href="../extra/styles.css" />	
+<link rel="stylesheet" href="../headerstyles.css" />	
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 </head>
 <body>
@@ -13,12 +13,11 @@
 <div id="header"></div>
 
 <script>
-  fetch("../extra/index.html")
+  fetch("../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
 
-      // Aquí va tu script, para que se ejecute cuando ya existe el header
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
       const subMenuParents = document.querySelectorAll(".has-submenu");
@@ -97,12 +96,12 @@
 	
 		
 <script src="script.js"></script>
-<script src="footer.js"></script>
+<script src="../footer.js"></script>
 
 <div id="footer"></div>
 
 <script>
-  fetch("../includes/footer.html")
+  fetch("../footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer").innerHTML = data;
