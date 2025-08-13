@@ -37,7 +37,6 @@ max-width: 100%;
     font-size: 70px;
     font-weight: bold;
     width: 80%;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1;
   }
   @media screen and (max-width: 650px){
@@ -57,4 +56,22 @@ max-width: 100%;
 }
 .quickedit:hover {
   background: #ddd;
+}
+
+h2 {
+  color: #00b185;
+  font-size: 41px;
+  margin: 0px 50px 25px;
+}
+
+h3 {
+  color: #009dd4;
+  font-size: 41px;
+  margin: 20px 55px 25px;
+}
+
+.post p {
+  color: #111b38;
+  font-size: 16px;
+  margin: 0px 55px 0px;
 }
