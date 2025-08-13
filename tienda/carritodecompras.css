@@ -427,7 +427,6 @@ color: #009dd4;
 
         .modal-content {
 background-color: #faf6ef;
-  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 100%;
@@ -619,7 +618,22 @@ position: relative;
     border-radius: 8px;
     animation: scaleIn 0.5s ease-out; /* Animación de escalado para apertura */
   }
-            
+            .close-button {
+            color: #ffc240;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+}
+        .modal-content {
+background-color: #faf6ef;
+  padding: 25px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 15px;
+  height: 100%;
+        }
 }
     
 
