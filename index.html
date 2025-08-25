@@ -39,11 +39,11 @@
       });
 
       document.querySelectorAll(".nav-link").forEach(link => {
-        link.addEventListener("click", function () {
-          if (window.innerWidth <= 1200) {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-          }
+  link.addEventListener("click", function () {
+    if (window.innerWidth <= 1200 && !this.parentElement.classList.contains("has-submenu")) {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
         });
       });
     });
