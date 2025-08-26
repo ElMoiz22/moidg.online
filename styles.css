@@ -31,13 +31,14 @@ font-family: "azo-sans-web", sans-serif;
     position: relative;
     width: 100%; /* Ancho del contenedor al 100% */
     border-radius: 11px;
+    cursor: pointer;
   }
 
   .contenedoress-imagenesmoi img {
     width: 100%; /* Imágenes al 100% del ancho del contenedor */
     height: auto; /* Altura automática para mantener la proporción */
         border-radius: 15px; /* Bordes redondeados */
-
+cursor: pointer;
   }
 
   .imagenesmoi-hover {
@@ -84,7 +85,7 @@ grid-template-columns: 100%;
     display: inline-block;
     padding: 10px 20px;
     background-color: #00526f; /* Color de fondo del botón */
-    color: #fcf6ef; /* Color del texto */
+    color: #faf6ef; /* Color del texto */
     border: none;
     border-radius: 10px; /* Bordes redondeados */
     font-size: 16px;
@@ -96,8 +97,8 @@ grid-template-columns: 100%;
   }
 
   .boton-contrata:hover {
-    background-color: #fff; /* Color de fondo del botón al pasar el ratón */
-        color: #000423; /* Color del texto */
+    background-color: #009dd4; /* Color de fondo del botón al pasar el ratón */
+    color: #faf6ef; /* Color del texto */
 
   }
 

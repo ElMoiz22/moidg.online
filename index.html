@@ -15,39 +15,56 @@
 <div id="header"></div>
 
 <script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
 
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-      const subMenuParents = document.querySelectorAll(".has-submenu");
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const subMenuParents = document.querySelectorAll(".has-submenu > .nav-link");
 
-      hamburger.addEventListener("click", function () {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      });
+    // Toggle menú principal
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
 
-      subMenuParents.forEach(item => {
-        item.addEventListener("click", function (e) {
-          if (window.innerWidth <= 1200) {
-            e.preventDefault();
-            this.classList.toggle("open");
-          }
-        });
-      });
+    // Submenús en móviles: solo uno abierto a la vez
+    subMenuParents.forEach(span => {
+      span.addEventListener("click", function (e) {
+        if (window.innerWidth <= 1200) {
+          e.preventDefault(); // evita que haga scroll o busque un link
+          const parentLi = this.parentElement;
 
-      document.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("click", function () {
-    if (window.innerWidth <= 1200 && !this.parentElement.classList.contains("has-submenu")) {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    }
-        });
+          // Cierra otros submenús abiertos
+          subMenuParents.forEach(other => {
+            if (other !== this) {
+              other.parentElement.classList.remove("open");
+            }
+          });
+
+          // Alterna el submenú del click actual
+          parentLi.classList.toggle("open");
+        }
       });
     });
+
+    // Cerrar menú en móvil al hacer click en enlaces normales del submenu
+    document.querySelectorAll(".submenu a").forEach(link => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 1200) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+
+          // Cierra todos los submenús
+          subMenuParents.forEach(span => span.parentElement.classList.remove("open"));
+        }
+      });
+    });
+  });
 </script>
+
 
 	    <!-- desde aqui agrega el contenido -->
 
@@ -63,43 +80,34 @@
 		</div>
 	
 	<div class='galeria'>
-
- <div class='imagen'><a href='Proyecto Super Gallo/index.html'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmZaLy_i9eCsCrvr4o99lsC40RWr7S0BP8QQ_AmliXfnM34R9CLMRDWnXOirfC9pmcsll4zPs6mQ0g4QyZx2iocvgdpfyPqVkkzda4W00iQPcNwWOLQm_58qTMyFJEbWpVEm4ZB3d05c-tCM9hga9L9TlrR1_y4MQ-zX54_klzW9vd9yYeL18Nzq1IhuI1/s1600/depspfc.png'/></a></div>
-      
-  <div class='imagen'><a href='https://www.moidg.online/2025/02/proyecto-ariga.html'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiegY_2tjn42yRkLJoj-v4EhW7tdS3KuoMi7hKFPjnQgtmUz4Sx0lT53PLHsutnp2fM56LBMbdf0l4uXuWFrEuHJLPbWvQM_taCIjHGDyvc1SSANMmycSAtRAq2PBqEx7NZGdNnLGTlVaBFBp1-UBeej-HpY30XhsJ4ULRq-hXqBXWJb3nPGR_M-AdYT6Z3/w640-h640/ari.png'/></a></div>
-      
-        <div class='imagen'><a href='https://www.moidg.online/2025/02/proyecto-luciano.html'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOY1qLXvUkIHcm6g-EjrlkhxWt8b7WyIwTkA46KCMFdYWwdG8mV68E7LhYVofGbs3WO3ohkn4BIWWNp9oU57xCeGGANUA3C4xRivba-DBeV1-CiyjCV_2PGGkrijZhYbwuwKyNO7AAsqUW1P4zPiFrC69yXFVeCLSZpyjC3c1RuLEIkpcBHkFpMrUts3fA/w640-h640/s9.png'/></a></div>  
-
-        <div class='imagen'><a href='https://www.moidg.online/2025/07/proyecto-barberena.html'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJibEUFNt6lB9xGywpipxqV-rHSOvMbM-RZYfccoUXdHYPnEYq2gESlVvqNd_YFxAA_qV3ti4L2C30LZ2PEMPQLl8WfhiKKjiclm4EfA9XfIZQvA3Brhwk2szQSl2dMoUOwKk-O-24kMlr_D6k-BhyphenhyphengnOpK6k-Q5Zzb615ijkHWd0cCv6QQ-1TrS_yNGYf/s1600/proo.png'/></a></div>
-      
+<div class='imagen'><a href='supergallos/'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmZaLy_i9eCsCrvr4o99lsC40RWr7S0BP8QQ_AmliXfnM34R9CLMRDWnXOirfC9pmcsll4zPs6mQ0g4QyZx2iocvgdpfyPqVkkzda4W00iQPcNwWOLQm_58qTMyFJEbWpVEm4ZB3d05c-tCM9hga9L9TlrR1_y4MQ-zX54_klzW9vd9yYeL18Nzq1IhuI1/s1600/depspfc.png'/></a></div>      
+<div class='imagen'><a href='joyasariga'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiegY_2tjn42yRkLJoj-v4EhW7tdS3KuoMi7hKFPjnQgtmUz4Sx0lT53PLHsutnp2fM56LBMbdf0l4uXuWFrEuHJLPbWvQM_taCIjHGDyvc1SSANMmycSAtRAq2PBqEx7NZGdNnLGTlVaBFBp1-UBeej-HpY30XhsJ4ULRq-hXqBXWJb3nPGR_M-AdYT6Z3/w640-h640/ari.png'/></a></div>
+<div class='imagen'><a href='lucianos'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOY1qLXvUkIHcm6g-EjrlkhxWt8b7WyIwTkA46KCMFdYWwdG8mV68E7LhYVofGbs3WO3ohkn4BIWWNp9oU57xCeGGANUA3C4xRivba-DBeV1-CiyjCV_2PGGkrijZhYbwuwKyNO7AAsqUW1P4zPiFrC69yXFVeCLSZpyjC3c1RuLEIkpcBHkFpMrUts3fA/w640-h640/s9.png'/></a></div>  
+<div class='imagen'><a href='tishudos'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJibEUFNt6lB9xGywpipxqV-rHSOvMbM-RZYfccoUXdHYPnEYq2gESlVvqNd_YFxAA_qV3ti4L2C30LZ2PEMPQLl8WfhiKKjiclm4EfA9XfIZQvA3Brhwk2szQSl2dMoUOwKk-O-24kMlr_D6k-BhyphenhyphengnOpK6k-Q5Zzb615ijkHWd0cCv6QQ-1TrS_yNGYf/s1600/proo.png'/></a></div>      
 <div class='imagen'><a href='https://www.instagram.com/jm12store/'><img alt='Imagen 1' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj23RRpSr-WgSprHbzArE3qVD8esgfc6VJ2JoCfO0lw1zuvChkBQPhwaEtm34ar6wdma9DGOugkcoeILJR-PKinWM8YDcdJvLQTbJ5cgDemjhX5VdbW4_elLCdVn8hc6q3QeOTkIm5FUdAJ3JbfQv-fcWXnS1nfkUCiB9KTJ6As_w8Xkakiis68BrBhttIG/s1600/jm12.png'/></a></div>
-  
-  <div class='imagen'><a href='https://www.facebook.com/CDMGT'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEho0Vn8Oh_Obirhlm2Z-5I2Y0LA38ReNj2BTH6rGShw2q2bfMjNF83zO725jVIh-r0veT9uDaqOYEz1H3JmcffnOG5xRAiTulRj5cogOlA-G-q1kqwuI0-zpGLsP3OUma6IvjQ30wTYPsOAEqfhvZaof7aLuk-T015py8_LrBjLe_WkaVMx82rnMsLB5np-/s1600/cdmgt.png'/></a></div>
-  
-       <div class='imagen'><a href='https://www.facebook.com/profile.php?id=61553947993931'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2aoYKw5YARU-35grqE_-dwDiHf_dIoK-gF7JaNNPCifbi5Hc7aivC5BwuXL0INH6wdVqKJ_NGrGKqtne_FkrLCzdXhLN9bjSXc2Csv_9IeBNpEk528SBAHOerXB5grpaYyhUbiOcZtqVUeNMi9Q4CDt6flh1oOkZr0heYMD7ktnUBsD6s8TLCJBGS7wc-/s1600/soccagt.png'/></a></div>
-
-        <div class='imagen'><a href='https://www.facebook.com/profile.php?id=61564506126766'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit0QWQkNHy96TV8xN0JqOsOpvOYHibTM3XDzPBJiwFj4NVsxV-JRjkCJS-O5hXnJHuebYI53Jthy3WwcNEPM8jZpMnogxzTUgt1s4VijG2E_8LqLV0ptkL_17s_Pmq8pklwu2fuRCJiu5lvWNDQQcAqUn_bCqgyvi-TF43Siu2tCATf_8qb7Ya07ozc0zz/s1600/456648045_122103697406483537_5303293901172133030_n.jpg'/></a></div>
-
+<div class='imagen'><a href='https://www.facebook.com/CDMGT'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEho0Vn8Oh_Obirhlm2Z-5I2Y0LA38ReNj2BTH6rGShw2q2bfMjNF83zO725jVIh-r0veT9uDaqOYEz1H3JmcffnOG5xRAiTulRj5cogOlA-G-q1kqwuI0-zpGLsP3OUma6IvjQ30wTYPsOAEqfhvZaof7aLuk-T015py8_LrBjLe_WkaVMx82rnMsLB5np-/s1600/cdmgt.png'/></a></div>
+<div class='imagen'><a href='https://www.facebook.com/profile.php?id=61553947993931'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2aoYKw5YARU-35grqE_-dwDiHf_dIoK-gF7JaNNPCifbi5Hc7aivC5BwuXL0INH6wdVqKJ_NGrGKqtne_FkrLCzdXhLN9bjSXc2Csv_9IeBNpEk528SBAHOerXB5grpaYyhUbiOcZtqVUeNMi9Q4CDt6flh1oOkZr0heYMD7ktnUBsD6s8TLCJBGS7wc-/s1600/soccagt.png'/></a></div>
+<div class='imagen'><a href='https://www.facebook.com/profile.php?id=61564506126766'><img src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit0QWQkNHy96TV8xN0JqOsOpvOYHibTM3XDzPBJiwFj4NVsxV-JRjkCJS-O5hXnJHuebYI53Jthy3WwcNEPM8jZpMnogxzTUgt1s4VijG2E_8LqLV0ptkL_17s_Pmq8pklwu2fuRCJiu5lvWNDQQcAqUn_bCqgyvi-TF43Siu2tCATf_8qb7Ya07ozc0zz/s1600/456648045_122103697406483537_5303293901172133030_n.jpg'/></a></div>
 </div>
 	
-	<h2 class="hero-title" style="     font-size: 33px;     text-align: center;     padding: 15px; ">Contrata un Diseñador</h2>
+	<h2 class="hero-title" style="font-size: 33px; text-align: center; padding: 15px; ">Contrata un Diseñador</h2>
 	
 	<div class="moi2">
   <div class="contenedoress-imagenesmoi animacion-carga">
-    <img alt="imagenesmoi 1" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK3VB7rgKKuHRVug5vqD1CgGcGFSPUboS6WxDLUUhk-mx0EFHZRojTtRsOpJafVjMlbxd_mSlZ8K1-ldPzm0U95xCcOzQDKQL9jMNpf7hIni8HgCp1iDwtig9e13lUnmH57jIt3MNqSooVUxybtdl5m0W1ODpf2NkYD4XtEi9xUMPxJQ9uJqCOql5UuoHO/s1600/c21.png" />
-    <img alt="imagenesmoi 2" class="imagenesmoi-hover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvxzfACdVKLQWMu_chaERq4I2wTTbCAJjLyryH2RkbQ0gVlgGTuAvdn7x_AtmExwH8OjlpzCWaq89S6Piq2QScn76hZnlbBmAp5BswUHgraJfvCYUofAMM-Hb59fgHHx95rHQAnZWomgt7wvHtkWoyfcg9sda6P3EGw9SmnqYRR-k0lS_dAvaZ42qcqbIh/s1600/c26a.png" />
+    <img alt="imagenesmoi 1" src="images/c21 (1).png" />
+    <img alt="imagenesmoi 2" class="imagenesmoi-hover" src="images/c26a (1).png" />
 <a class="boton-contrata" href="https://api.whatsapp.com/send?phone=50256952056&amp;text=Me%20puede%20dar%20mas%20información%20del%20paquete%20básico?%20✅😁" target="_blank"><span>Contratar</span></a>
  </div>
   
 <div class="contenedoress-imagenesmoi animacion-carga">
-    <img alt="imagenesmoi 1" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgErcHSiXIDd3uuiX8x4Cs0yOdbDLIFC5sAbp1Q6Gs6FvfWNRcVMXLSGziFm-8hWXUAapqYNbq9OiZDxnNIOaeyp8gX-WTInpsay-daiBokTVN8TvaWkrcayADNoZ_CwdcTEmoTtGdF-2fX-lfcgWcFkidElYQ2jcQcOVpNjP1LK0YuByamLvJeD4Q-8jL2/s1600/c22.png" />
-    <img alt="imagenesmoi 2" class="imagenesmoi-hover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJPXbyMdo2X9fHydmcaHflPYELW8mXLGzuVPZe2OIJB3zq9p-cTCj9Z05SOofbfDqgCURFW_wicW68caoMB7ENRGKIKoWUnG4d6ljFqAgihrWdT7yKYXBqDdKPmoXjK1fv2RJHBdURlgHZYh4boI8fyc65jzDGDX3zhT1nwevBUY3doRtpiAHX_zyJ8Ktu/s1600/c25a.png" />
+    <img alt="imagenesmoi 1" src="images/c22 (1).png" />
+    <img alt="imagenesmoi 2" class="imagenesmoi-hover" src="images/c25a (1).png" />
 <a class="boton-contrata" href="https://api.whatsapp.com/send?phone=50256952056&amp;text=Me%20puede%20dar%20mas%20información%20del%20paquete%20Estándar?%20✅😁" target="_blank"><span>Contratar</span></a>
   </div>
   
 <div class="contenedoress-imagenesmoi animacion-carga">
-    <img alt="imagenesmoi 1" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2Kst0wOFG75KtXgGeWGwSNJkz8T29GUwP-Mj7E7pQe8Th15SIwL8ees8PP5r2Khui8SlfPVhmVePhUJXcoHBmM8C69HrDEfdoTMjgiRxd5k73vJ-p5TUHeTfboo5QWtZvb8rPWo8G8knU0mmiai8UeuzHAbKHUDKXH_0MnWN6ZidD_zY1ZAQZeQiattai/s1600/c23.png" />
-    <img alt="imagenesmoi 2" class="imagenesmoi-hover" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggexUl1DOFmYQCYVTl9LRBJLgqz8-Jy9almiVIhdorwvbrbYU3gex2VVp6bTLV7_Y8s-O5Y2c3qsM_f8H5ryOxzyLpSZRAihufcV3pn2KpXk63NW_NscdcZEGLkW6On21PPZ_g5kw_WqyNpPJ9hMpDKT9vgYJS9qBNxGMysOAbmvG1HMKQ-xFP8bDuyAGD/s1600/c24a.png" />
+    <img alt="imagenesmoi 1" src="images/c23 (1).png" />
+    <img alt="imagenesmoi 2" class="imagenesmoi-hover" src="images/c24a (1).png" />
 <a class="boton-contrata" href="https://api.whatsapp.com/send?phone=50256952056&amp;text=Me%20puede%20dar%20mas%20información%20del%20paquete%20Ultra?%20✅😁" target="_blank"><span>Contratar</span></a>
   </div> 
 </div>
