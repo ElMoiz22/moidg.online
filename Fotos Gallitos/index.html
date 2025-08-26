@@ -8,44 +8,30 @@
 <link rel="stylesheet" href="../headerstyles.css" />	
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 </head>
-<style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 15px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .card img {
+ <style>
+    .contenedor {
+      position: relative;
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      overflow: hidden;
+    }
+    .contenedor img {
+      width: 100%;
+      height: auto;
       display: block;
     }
-    .card button {
-      padding: 10px;
-      background: #0077ff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
+    .texto {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(0, 132, 172);
+      font-size: 2rem;
       font-weight: bold;
-      transition: background 0.3s;
+      text-align: center;
     }
-    .card button:hover {
-      background: #005bcc;
+    a {
+      display: block;
+      text-decoration: none;
     }
   </style>
 <body>
@@ -89,36 +75,26 @@
 
 	    <!-- desde aqui agrega el contenido -->
 
-        <div class="gallery" id="gallery"></div>
+         <div class="contenedor">
+    <a href="especial.html">
+      <img src="images/fondoweb.png" alt="Imagen 1">
+      <div class="texto">Fotos Categoría Especial</div>
+    </a>
+  </div>
 
- <script>
-    const images = [];
+  <div class="contenedor">
+    <a href="sub15.html">
+      <img src="images/fondoweb.png" alt="Imagen 2">
+      <div class="texto">Fotos Sub-15</div>
+    </a>
+  </div>
 
-    // Generar nombres desde foto (1).png hasta foto (59).png
-    for (let i = 1; i <= 59; i++) {
-      images.push(`foto (${i}).png`);
-    }
-
-    const gallery = document.getElementById("gallery");
-
-    images.forEach(img => {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const imageElement = document.createElement("img");
-      imageElement.src = `sub13/${img}`;
-      imageElement.alt = img;
-
-      const downloadBtn = document.createElement("a");
-      downloadBtn.href = `sub13/${img}`;
-      downloadBtn.download = img;
-      downloadBtn.innerHTML = "<button>Descargar Imagen</button>";
-
-      card.appendChild(imageElement);
-      card.appendChild(downloadBtn);
-      gallery.appendChild(card);
-    });
-  </script>
+  <div class="contenedor">
+    <a href="sub13.html">
+      <img src="images/fondoweb.png" alt="Imagen 3">
+      <div class="texto">Fotos Sub-13</div>
+    </a>
+  </div>
   
   
 <script src="script.js"></script>
