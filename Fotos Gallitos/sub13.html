@@ -87,34 +87,35 @@
 
         <div class="gallery" id="gallery"></div>
 
- <script>
-    const images = [];
+<script>
+  const images = [];
 
-    // Generar nombres desde foto (1).png hasta foto (59).png
-    for (let i = 1; i <= 59; i++) {
-      images.push(`foto (${i}).png`);
-    }
+  // Generar nombres desde foto (1).png hasta foto (59).png
+  for (let i = 1; i <= 59; i++) {
+    images.push(`foto (${i}).png`);
+  }
 
-    const gallery = document.getElementById("gallery");
+  const gallery = document.getElementById("gallery");
 
-    images.forEach(img => {
-      const card = document.createElement("div");
-      card.className = "card";
+  images.forEach(img => {
+    const card = document.createElement("div");
+    card.className = "card";
 
-      const imageElement = document.createElement("img");
-      imageElement.src = `sub13/${img}`;
-      imageElement.alt = img;
+    const imageElement = document.createElement("img");
+    imageElement.src = `sub13/${img}`;
+    imageElement.alt = img;
+    imageElement.loading = "lazy"; // <-- Aquí agregas lazy loading
 
-      const downloadBtn = document.createElement("a");
-      downloadBtn.href = `sub13/${img}`;
-      downloadBtn.download = img;
-      downloadBtn.innerHTML = "<button>Descargar Imagen</button>";
+    const downloadBtn = document.createElement("a");
+    downloadBtn.href = `sub13/${img}`;
+    downloadBtn.download = img;
+    downloadBtn.innerHTML = "<button>Descargar Imagen</button>";
 
-      card.appendChild(imageElement);
-      card.appendChild(downloadBtn);
-      gallery.appendChild(card);
-    });
-  </script>
+    card.appendChild(imageElement);
+    card.appendChild(downloadBtn);
+    gallery.appendChild(card);
+  });
+</script>s
   
   
 <script src="script.js"></script>
