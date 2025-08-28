@@ -102,7 +102,7 @@
 
 .product p {
     margin: 5px 0;
-  font-weight: bold;
+  font-weight: 900;
   font-size: 30px;
       color: #fff;
 }
@@ -116,6 +116,7 @@
     font-size: 14px;
     width: 100%;
   height: 30px;
+  font-weight: 900;
 }
 
 .product button:hover {
@@ -504,7 +505,7 @@ top: 100%;
 /* Estilo de botón de carrito */
 .btn-cart {
   color: #00b384;
-  border-radius: 50px;
+  border-radius: 50px;  
   text-align: center;
   font-size: 27px;
   transition: all 300ms ease;
