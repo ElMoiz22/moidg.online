@@ -329,23 +329,24 @@ color: #009dd4;
 
 /* Botón activado */
 .boton2 {
-  background-color: #eee;
-  color: #0e1235;
+  background-color: #eae5dd;
+  color: #00526f;
   border: none;
   border-radius: 40px;
   cursor: pointer;
   font-size: 16px;
   width: 24.50%;
   transition: background-color 0.3s;
+  font-weight: 900;
 }
 
 .boton2:hover {
-  background-color: #ffbd2f;
-}
+  background-color: #00526f;
+  color: #eae5dd;}
 
 .boton2.activo {
-  background-color: #ffbd2f;
-  color: #0e1235;
+  background-color: #009dd4;
+  color: #eae5dd;
 }
 
 @media screen and (max-width: 768px) {
@@ -502,17 +503,14 @@ top: 100%;
 
 /* Estilo de botón de carrito */
 .btn-cart {
-position: sticky;
-  width: 75px;
-  height: 60px;
-  bottom: 30px;
-  left: 25px;
   color: #00b384;
   border-radius: 50px;
   text-align: center;
   font-size: 27px;
-  z-index: 100;
   transition: all 300ms ease;
+  width: 75px;
+  display: inline-block; /* mantiene el orden horizontal */
+  vertical-align: middle; /* lo alinea con otros elementos */
 }
 
 .btn-cart:hover {
@@ -520,13 +518,14 @@ position: sticky;
 }
 
 .cart-count {
-position: absolute;
-  top: 0px;
-  right: -1px;
+  position: absolute;
+  top: 15px;
+  right: 31px;
   color: #ffc600;
-  font-size: 35px;
+  font-size: 21px;
   font-weight: bold;
 }
+
 
   /* Modal 2 */
   .modal2 {
@@ -707,15 +706,7 @@ background-color: #faf6ef;
         width: 100%;
     }
 
-    .btn-cart {
-  position: sticky;
-  width: 75px;
-  height: 60px;
-  bottom: 30px;
-  left: 25px;
-  border-radius: 50px;
-  text-align: center;
-}
+
 
 }
 
