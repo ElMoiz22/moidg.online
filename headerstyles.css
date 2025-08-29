@@ -277,32 +277,32 @@ background-image:url(images/fondoweb.png)
   margin-bottom: 20px;
 }
 
-.footer-section h4 {
+.footer .footer-section h4 {
   margin-bottom: 15px;
   font-size: 18px;
   color: #ffcc00;
   font-weight: 900;
 }
 
-.footer-section p, 
-.footer-section li {
+.footer .footer-section p, 
+.footer .footer-section li {
   font-size: 14px;
   line-height: 1.6;
   margin-right: 30px;
 }
 
-.footer-section ul {
+.footer .footer-section ul {
   list-style: none;
   padding: 0;
 }
 
-.footer-section ul li a {
+.footer .footer-section ul li a {
   text-decoration: none;
   color: #fcf6ef;
   transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
+.footer .footer-section ul li a:hover {
   color: #fcf6ef;
 }
 
@@ -323,8 +323,8 @@ background-image:url(images/fondoweb.png)
     text-align: center;
   }
   
-.footer-section p, 
-.footer-section li {
+.footer .footer-section p, 
+.footer .footer-section li {
   font-size: 14px;
   line-height: 1.6;
   margin-right: 5px;
@@ -334,23 +334,23 @@ background-image:url(images/fondoweb.png)
 
 
 
-.footer-extra-menu ul {
+.footer .footer-extra-menu ul {
   list-style: none;
   padding: 0;
   margin: 10px 0;
   gap: 15px;
 }
 
-.footer-extra-menu ul li {
+.footer .footer-extra-menu ul li {
   display: inline-block;
 }
 
-.footer-extra-menu a {
+.footer .footer-extra-menu a {
   font-size: 24px;
   color: #00b384;
   transition: color 0.3s;
 }
 
-.footer-extra-menu a:hover {
+.footer .footer-extra-menu a:hover {
   color: #12765f;
 }

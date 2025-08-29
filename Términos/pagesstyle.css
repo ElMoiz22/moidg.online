@@ -58,25 +58,25 @@ max-width: 100%;
   background: #ddd;
 }
 
-h2 {
+.post h2 {
   color: #00b185;
   font-size: 41px;
   margin: 0px 50px 25px;
 }
 
-h3 {
+.post h3 {
   color: #009dd4;
   font-size: 41px;
   margin: 20px 55px 25px;
 }
 
- p {
+.post p {
   color: #111b38;
   font-size: 16px;
   margin: 0px 55px 0px;
 }
 
- li {
+.post  li {
   color: #111b38;
   font-size: 16px;
   margin: 0px 55px 0px;
