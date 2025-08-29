@@ -339,6 +339,7 @@ color: #009dd4;
   width: 24.50%;
   transition: background-color 0.3s;
   font-weight: 900;
+  margin-top: 10px;
 }
 
 .boton2:hover {
@@ -620,7 +621,6 @@ position: relative;
   }
             .close-button {
             color: #ffc240;
-  float: right;
   font-size: 28px;
   font-weight: bold;
   position: absolute;
@@ -638,82 +638,63 @@ background-color: #faf6ef;
     
 
   .close:hover {
-    color: #fff; /* Cambia el color al pasar el ratón sobre el botón */
+    color: #000000; /* Cambia el color al pasar el ratón sobre el botón */
   }
 
         #outer-wrapper {background-color: #000423;}
     
+
+        
    
-/* Estilo base para la pantalla completa */
 .full-screen-container {
-    display: flex;
-    width: 100%;
-    height: 100%; /* Usamos el alto de la vista para que ocupe toda la pantalla */
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas en desktop */
+  width: 100%;
+  height: 100%; /* ocupa toda la pantalla */
+  overflow: hidden;
 }
 
 .full-screen-section {
-    flex: 1;
-    position: relative;
-    transition: filter 0.3s ease; /* transición suave al aplicar el filtro */
+  position: relative;
+  transition: filter 0.3s ease;
 }
 
 .full-screen-section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Para que la imagen cubra completamente su contenedor */
-    transition: transform 0.3s ease; /* transición suave para la animación */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* Cuando se pasa el mouse sobre una sección */
+/* Hover */
 .full-screen-section:hover img {
-    transform: scale(1.05); /* Efecto de levantamiento */
-    z-index: 2;
+  transform: scale(1.05);
+  z-index: 2;
 }
 
-/* Oscurece las otras imágenes */
-.full-screen-container:hover .full-screen-section {
-    filter: brightness(60%);
+
+
+/* Tablets → 3 columnas */
+@media (max-width: 1024px) {
+  .full-screen-container {
+    grid-template-columns: repeat(3, 1fr);
+    height: auto; /* deja que crezca */
+  }
+  .full-screen-section img {
+    height: auto;
+  }
 }
 
-.full-screen-container .full-screen-section:hover {
-    filter: brightness(100%); /* Mantiene la imagen enfocada sin oscurecer */
+/* Celulares → 2 columnas */
+@media (max-width: 600px) {
+  .full-screen-container {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+  .full-screen-section img {
+    height: auto;
+  }
 }
- object-fit: cover; /* Ajusta la imagen sin distorsionarla */
-}
-
-/* Media query para pantallas medianas (tablet, por ejemplo) */
-@media (max-width: 768px) {
-    .full-screen-container {
-        flex-direction: column; /* Coloca las secciones una encima de la otra en pantallas pequeñas */
-        height: auto;
-    }
-
-    .full-screen-section img {
-        height: auto; /* Deja que la imagen se ajuste proporcionalmente */
-        width: 100%; /* Asegura que la imagen ocupe todo el ancho */
-    }
-}
-
-/* Media query para pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
-    .full-screen-container {
-        flex-direction: column; /* Coloca las secciones una encima de la otra en pantallas pequeñas */
-        height: auto;
-    }
-
-    .full-screen-section img {
-        height: auto; /* Ajusta la imagen sin distorsión */
-        width: 100%;
-    }
-
-
-
-}
-
-    
-    
-
 
 
 
@@ -753,7 +734,7 @@ position: initial;
 /* Estilo para el botón de cerrar */
 .close {
 position: absolute;
-  top: 3px;
+  top: 0px;
   cursor: pointer;
   color: #ffb100;
     font-size: 63px;
