@@ -7,8 +7,9 @@
 <link rel="icon" href="icons/moi-agency-logo-blanco-crema.png" type="icono">
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="headerstyles.css" />
+<link rel="stylesheet" href="swipe.css" />
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 	
@@ -112,6 +113,23 @@ fetch("header.html")
   </div> 
 </div>
 
+	<h2 class="hero-title" style="font-size: 33px; text-align: center; padding: 15px; ">Hemos Trabajado Con:</h2>
+
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/p1.png" /><p>Branding and Social Media</p></div>
+      <div class="swiper-slide"><img src="images/p6.png" /><p>Videography and Social Media Design</p></div>
+      <div class="swiper-slide"><img src="images/p3.png" /><p>Web Design and Social Media Designer</p></div>
+      <div class="swiper-slide"><img src="images/p7.png" /><p>Social Media Designer</p></div>
+      <div class="swiper-slide"><img src="images/p8.png" /><p>Social Media Designer</p></div>
+      <div class="swiper-slide"><img src="images/p9.png" /><p>Social Media Designer</p></div>
+      <div class="swiper-slide"><img src="images/p10.png" /><p>Social Media Designer</p></div>
+      <div class="swiper-slide"><img src="images/p2.png" /><p>Social Media Designer</p></div>
+      <div class="swiper-slide"><img src="images/p4.png" /><p>Social Media Designer</p></div>
+      <div class="swiper-slide"><img src="images/p5.png" /><p>Social Media Designer</p></div>
+    </div>
+  </div>
 
 <script src="script.js"></script>
 <script src="footer.js"></script>
@@ -125,6 +143,25 @@ fetch("header.html")
       document.getElementById("footer").innerHTML = data;
     });
 </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 7,
+      spaceBetween: 5,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+          delay: 6500,
+          disableOnInteraction: false,
+        },
+    });
+  </script>
+
 
 	</body>
 </html>
