@@ -19,11 +19,10 @@ font-family: "azo-sans-web", sans-serif;
 /* moi*/
 
 .moi2 {
-    width: 80%; 
+    width: 90%; 
     margin: 0 auto; /* Centrar horizontalmente */
     display: grid;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    grid-gap: 10px; 
+    grid-template-columns: 24.99% 24.99% 24.99% 24.99%;
     justify-items: center; /* Centra las columnas horizontalmente */
   }
 
@@ -70,7 +69,14 @@ cursor: pointer;
   }
 
   /* Media queries para ajustar el diseño en diferentes tamaños de pantalla */
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
+    .moi2 {
+      width: 98%;
+grid-template-columns: 49% 49%;
+    }
+  }
+
+    @media (max-width: 500px) {
     .moi2 {
       width: 98%;
 grid-template-columns: 100%;
@@ -93,7 +99,7 @@ grid-template-columns: 100%;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 0px;
-    width: 100%;
+    width: 98%;
   }
 
   .boton-contrata:hover {
