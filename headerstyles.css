@@ -4,6 +4,10 @@ font-family: "azo-sans-web", sans-serif;
 }
 
 /* Header */
+.icono {
+width: 100%;
+height: auto;
+}
 
 .header {
   background-color: #00526f;
