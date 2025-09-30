@@ -161,13 +161,20 @@ fetch("header.html")
     slidesPerView: 7,
     spaceBetween: 5,
     loop: true,
-    speed: 6000, // velocidad del deslizamiento (ajusta a tu gusto)
+    speed: 6000,
     autoplay: {
-      delay: 0, // sin pausa entre transiciones
+      delay: 0,
       disableOnInteraction: false,
     },
+    breakpoints: {
+      1024: { slidesPerView: 8 }, // pantallas grandes
+      768: { slidesPerView: 5 },  // tablets
+      480: { slidesPerView: 3 },  // móviles medianos
+      320: { slidesPerView: 3 }   // móviles pequeños
+    }
   });
 </script>
+
 
 
 
