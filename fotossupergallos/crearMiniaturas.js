@@ -2,8 +2,8 @@ const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
 
-const folder = "./jornada11/";       // Carpeta donde están tus PNG originales
-const output = "./jornada11/thumbs/"; // Carpeta donde se guardarán las miniaturas
+const folder = "./jornada13/";       // Carpeta donde están tus PNG originales
+const output = "./jornada13/thumbs/"; // Carpeta donde se guardarán las miniaturas
 
 // Crear carpeta de miniaturas si no existe
 if (!fs.existsSync(output)) fs.mkdirSync(output, { recursive: true });
