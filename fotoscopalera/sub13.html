@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fotos Juventud Copalera sub-15</title>
+<title>Fotos Juventud Copalera sub-13</title>
 <link rel="stylesheet" href="pagesstyles.css" />	
 <link rel="stylesheet" href="galeria.css" />	
 <link rel="stylesheet" href="../headerstyles.css" />	
@@ -98,7 +98,7 @@ fetch("/header.html")
     card.className = "card";
 
     const imageElement = document.createElement("img");
-    imageElement.src = `j1sub15/thumbs/${img}`;  // Miniatura
+    imageElement.src = `j1sub13/thumbs/${img}`;  // Miniatura
     imageElement.alt = img;
     imageElement.loading = "lazy";
     imageElement.style.cursor = "pointer";
@@ -106,8 +106,8 @@ fetch("/header.html")
     // Al hacer click en la miniatura, abrir lightbox
     imageElement.addEventListener("click", () => {
       lightbox.style.display = "flex";
-      lightboxImg.src = `j1sub15/thumbs/${img}`;            // Imagen original
-      lightboxDownload.href = `j1sub15/${img}`;      // Descarga solo en la vista previa
+      lightboxImg.src = `j1sub13/thumbs/${img}`;            // Imagen original
+      lightboxDownload.href = `j1sub13/${img}`;      // Descarga solo en la vista previa
     });
 
     card.appendChild(imageElement);
