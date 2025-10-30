@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tazas Personalizadas</title>
-<link rel="stylesheet" href="../pagesstyles.css" />	
+<link rel="stylesheet" href="https://moidg.online/Imprenta/pagesstyles.css" />	
 <link rel="stylesheet" href="/headerstyles.css" />	
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
 </head>
@@ -101,7 +101,6 @@ fetch("/header.html")
 
 
 
-
 <style>
 .post-body h3 {
     font-size: 20px;
@@ -119,7 +118,8 @@ fetch("/header.html")
     background-color: #faf6ef;
     margin: 4px;
     border-radius: 10px;
-    padding: 2%;
+        cursor: pointer;
+
 }
 @media screen and (max-width: 1000px) {
     .imagen {
@@ -139,12 +139,12 @@ fetch("/header.html")
 
 <style>
     .price {
-        color: white;
-        font-size: 20px;
+        color: #111b38;
+        font-size: 20px; 
         font-weight: bold;
 text-align: center;   
     text-align: center;
-
+font-weight: 900;
 }
 
 .galeria {
@@ -199,6 +199,7 @@ text-align: center;
     height: auto;
     display: block;
     margin: 0 0 15px;
+
   }
   .txttitulopost {
     position: absolute;
@@ -219,7 +220,7 @@ text-align: center;
 <div id="footer"></div>
 
 <script>
-  fetch("../footer.html")
+  fetch("footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer").innerHTML = data;
