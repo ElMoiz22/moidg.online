@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tazas Personalizadas</title>
+<link rel="icon" class="icono" href="https://moidg.online/icons/web%20logo.ico" type="icono">
 <link rel="stylesheet" href="https://moidg.online/Imprenta/pagesstyles.css" />	
 <link rel="stylesheet" href="/headerstyles.css" />	
 <link rel="stylesheet" href="https://use.typekit.net/juf6vww.css">
@@ -220,7 +221,7 @@ font-weight: 900;
 <div id="footer"></div>
 
 <script>
-  fetch("footer.html")
+  fetch("/footer.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("footer").innerHTML = data;
